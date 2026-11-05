@@ -1,0 +1,241 @@
+folds,fold,alg,set,tuning,lambda,nonzero,mtry,min.node.size,glm_warnings
+random_226,1,baseline,-,none,,,,,
+random_226,1,incumbency,-,none,,,,,
+random_226,1,logistic,A,none,,,,,0
+random_226,1,logistic,B,none,,,,,1
+random_226,1,lasso,A,lambda=0.01294 (5 of 66 coefs nonzero),0.0129428423811974,5,,,
+random_226,1,lasso,B,lambda=0.007406 (17 of 74 coefs nonzero),0.00740637026622316,17,,,
+random_226,1,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_226,1,forest,B,"mtry=4, min.node.size=15",,,4,15,
+random_226,2,baseline,-,none,,,,,
+random_226,2,incumbency,-,none,,,,,
+random_226,2,logistic,A,none,,,,,0
+random_226,2,logistic,B,none,,,,,1
+random_226,2,lasso,A,lambda=0.01434 (5 of 67 coefs nonzero),0.0143416562202633,5,,,
+random_226,2,lasso,B,lambda=0.01727 (5 of 75 coefs nonzero),0.0172745756904815,5,,,
+random_226,2,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_226,2,forest,B,"mtry=4, min.node.size=5",,,4,5,
+random_226,3,baseline,-,none,,,,,
+random_226,3,incumbency,-,none,,,,,
+random_226,3,logistic,A,none,,,,,1
+random_226,3,logistic,B,none,,,,,1
+random_226,3,lasso,A,lambda=0.0117 (6 of 66 coefs nonzero),0.0117040631236608,6,,,
+random_226,3,lasso,B,lambda=0.006103 (23 of 74 coefs nonzero),0.00610250821300388,23,,,
+random_226,3,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_226,3,forest,B,"mtry=7, min.node.size=5",,,7,5,
+random_226,4,baseline,-,none,,,,,
+random_226,4,incumbency,-,none,,,,,
+random_226,4,logistic,A,none,,,,,0
+random_226,4,logistic,B,none,,,,,1
+random_226,4,lasso,A,lambda=0.01401 (4 of 66 coefs nonzero),0.0140100347752009,4,,,
+random_226,4,lasso,B,lambda=0.005526 (26 of 74 coefs nonzero),0.00552584640532795,26,,,
+random_226,4,forest,A,"mtry=1, min.node.size=15",,,1,15,
+random_226,4,forest,B,"mtry=7, min.node.size=15",,,7,15,
+random_226,5,baseline,-,none,,,,,
+random_226,5,incumbency,-,none,,,,,
+random_226,5,logistic,A,none,,,,,0
+random_226,5,logistic,B,none,,,,,1
+random_226,5,lasso,A,lambda=0.01162 (5 of 67 coefs nonzero),0.0116196461319975,5,,,
+random_226,5,lasso,B,lambda=0.004583 (34 of 75 coefs nonzero),0.0045830278682346,34,,,
+random_226,5,forest,A,"mtry=1, min.node.size=15",,,1,15,
+random_226,5,forest,B,"mtry=7, min.node.size=5",,,7,5,
+random_226,6,baseline,-,none,,,,,
+random_226,6,incumbency,-,none,,,,,
+random_226,6,logistic,A,none,,,,,0
+random_226,6,logistic,B,none,,,,,1
+random_226,6,lasso,A,lambda=0.01159 (6 of 66 coefs nonzero),0.0115906632398745,6,,,
+random_226,6,lasso,B,lambda=0.006043 (25 of 74 coefs nonzero),0.00604338141961191,25,,,
+random_226,6,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_226,6,forest,B,"mtry=7, min.node.size=5",,,7,5,
+random_226,7,baseline,-,none,,,,,
+random_226,7,incumbency,-,none,,,,,
+random_226,7,logistic,A,none,,,,,0
+random_226,7,logistic,B,none,,,,,1
+random_226,7,lasso,A,lambda=0.01276 (6 of 67 coefs nonzero),0.0127587607540334,6,,,
+random_226,7,lasso,B,lambda=0.005523 (24 of 75 coefs nonzero),0.00552296295466618,24,,,
+random_226,7,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_226,7,forest,B,"mtry=4, min.node.size=15",,,4,15,
+random_226,8,baseline,-,none,,,,,
+random_226,8,incumbency,-,none,,,,,
+random_226,8,logistic,A,none,,,,,0
+random_226,8,logistic,B,none,,,,,1
+random_226,8,lasso,A,lambda=0.01412 (4 of 67 coefs nonzero),0.0141174743492456,4,,,
+random_226,8,lasso,B,lambda=0.007361 (20 of 75 coefs nonzero),0.00736086282625893,20,,,
+random_226,8,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_226,8,forest,B,"mtry=7, min.node.size=5",,,7,5,
+random_226,9,baseline,-,none,,,,,
+random_226,9,incumbency,-,none,,,,,
+random_226,9,logistic,A,none,,,,,0
+random_226,9,logistic,B,none,,,,,1
+random_226,9,lasso,A,lambda=0.01184 (6 of 67 coefs nonzero),0.0118381652644961,6,,,
+random_226,9,lasso,B,lambda=0.006172 (24 of 75 coefs nonzero),0.00617242918037927,24,,,
+random_226,9,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_226,9,forest,B,"mtry=4, min.node.size=15",,,4,15,
+random_226,10,baseline,-,none,,,,,
+random_226,10,incumbency,-,none,,,,,
+random_226,10,logistic,A,none,,,,,0
+random_226,10,logistic,B,none,,,,,1
+random_226,10,lasso,A,lambda=0.01564 (4 of 67 coefs nonzero),0.0156367027514489,4,,,
+random_226,10,lasso,B,lambda=0.004665 (30 of 75 coefs nonzero),0.00466544050114913,30,,,
+random_226,10,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_226,10,forest,B,"mtry=4, min.node.size=15",,,4,15,
+random_227,1,baseline,-,none,,,,,
+random_227,1,incumbency,-,none,,,,,
+random_227,1,logistic,A,none,,,,,0
+random_227,1,logistic,B,none,,,,,1
+random_227,1,lasso,A,lambda=0.008799 (15 of 66 coefs nonzero),0.00879855575846849,15,,,
+random_227,1,lasso,B,lambda=0.005035 (29 of 74 coefs nonzero),0.00503485709212497,29,,,
+random_227,1,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_227,1,forest,B,"mtry=4, min.node.size=5",,,4,5,
+random_227,2,baseline,-,none,,,,,
+random_227,2,incumbency,-,none,,,,,
+random_227,2,logistic,A,none,,,,,0
+random_227,2,logistic,B,none,,,,,1
+random_227,2,lasso,A,lambda=0.01556 (4 of 67 coefs nonzero),0.0155608901786481,4,,,
+random_227,2,lasso,B,lambda=0.006736 (23 of 75 coefs nonzero),0.00673593789045177,23,,,
+random_227,2,forest,A,"mtry=1, min.node.size=15",,,1,15,
+random_227,2,forest,B,"mtry=4, min.node.size=5",,,4,5,
+random_227,3,baseline,-,none,,,,,
+random_227,3,incumbency,-,none,,,,,
+random_227,3,logistic,A,none,,,,,0
+random_227,3,logistic,B,none,,,,,1
+random_227,3,lasso,A,lambda=0.01411 (5 of 65 coefs nonzero),0.0141113793465379,5,,,
+random_227,3,lasso,B,lambda=0.007358 (19 of 73 coefs nonzero),0.00735768488679561,19,,,
+random_227,3,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_227,3,forest,B,"mtry=7, min.node.size=5",,,7,5,
+random_227,4,baseline,-,none,,,,,
+random_227,4,incumbency,-,none,,,,,
+random_227,4,logistic,A,none,,,,,0
+random_227,4,logistic,B,none,,,,,1
+random_227,4,lasso,A,lambda=0.01167 (5 of 67 coefs nonzero),0.0116689467134443,5,,,
+random_227,4,lasso,B,lambda=0.006084 (27 of 75 coefs nonzero),0.0060841984876125,27,,,
+random_227,4,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_227,4,forest,B,"mtry=7, min.node.size=5",,,7,5,
+random_227,5,baseline,-,none,,,,,
+random_227,5,incumbency,-,none,,,,,
+random_227,5,logistic,A,none,,,,,0
+random_227,5,logistic,B,none,,,,,1
+random_227,5,lasso,A,lambda=0.01294 (6 of 67 coefs nonzero),0.0129383851630951,6,,,
+random_227,5,lasso,B,lambda=0.007404 (20 of 75 coefs nonzero),0.00740381968215118,20,,,
+random_227,5,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_227,5,forest,B,"mtry=7, min.node.size=15",,,7,15,
+random_227,6,baseline,-,none,,,,,
+random_227,6,incumbency,-,none,,,,,
+random_227,6,logistic,A,none,,,,,1
+random_227,6,logistic,B,none,,,,,1
+random_227,6,lasso,A,lambda=0.01196 (4 of 67 coefs nonzero),0.0119569121741503,4,,,
+random_227,6,lasso,B,lambda=0.005681 (23 of 75 coefs nonzero),0.0056805019864324,23,,,
+random_227,6,forest,A,"mtry=1, min.node.size=5",,,1,5,
+random_227,6,forest,B,"mtry=2, min.node.size=5",,,2,5,
+random_227,7,baseline,-,none,,,,,
+random_227,7,incumbency,-,none,,,,,
+random_227,7,logistic,A,none,,,,,0
+random_227,7,logistic,B,none,,,,,1
+random_227,7,lasso,A,lambda=0.01159 (5 of 67 coefs nonzero),0.0115910075109746,5,,,
+random_227,7,lasso,B,lambda=0.006044 (23 of 75 coefs nonzero),0.00604356092284883,23,,,
+random_227,7,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_227,7,forest,B,"mtry=4, min.node.size=5",,,4,5,
+random_227,8,baseline,-,none,,,,,
+random_227,8,incumbency,-,none,,,,,
+random_227,8,logistic,A,none,,,,,0
+random_227,8,logistic,B,none,,,,,1
+random_227,8,lasso,A,lambda=0.01312 (4 of 67 coefs nonzero),0.013120075632727,4,,,
+random_227,8,lasso,B,lambda=0.01734 (5 of 75 coefs nonzero),0.0173439678498883,5,,,
+random_227,8,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_227,8,forest,B,"mtry=4, min.node.size=5",,,4,5,
+random_227,9,baseline,-,none,,,,,
+random_227,9,incumbency,-,none,,,,,
+random_227,9,logistic,A,none,,,,,0
+random_227,9,logistic,B,none,,,,,1
+random_227,9,lasso,A,lambda=0.01411 (4 of 67 coefs nonzero),0.014106203511104,4,,,
+random_227,9,lasso,B,lambda=0.005564 (29 of 75 coefs nonzero),0.00556377733641571,29,,,
+random_227,9,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_227,9,forest,B,"mtry=7, min.node.size=15",,,7,15,
+random_227,10,baseline,-,none,,,,,
+random_227,10,incumbency,-,none,,,,,
+random_227,10,logistic,A,none,,,,,0
+random_227,10,logistic,B,none,,,,,1
+random_227,10,lasso,A,lambda=0.01146 (5 of 67 coefs nonzero),0.011460002787637,5,,,
+random_227,10,lasso,B,lambda=0.005975 (23 of 75 coefs nonzero),0.00597525495152387,23,,,
+random_227,10,forest,A,"mtry=2, min.node.size=40",,,2,40,
+random_227,10,forest,B,"mtry=4, min.node.size=15",,,4,15,
+district_226,1,baseline,-,none,,,,,
+district_226,1,incumbency,-,none,,,,,
+district_226,1,logistic,A,none,,,,,0
+district_226,1,logistic,B,none,,,,,1
+district_226,1,lasso,A,lambda=0.01401 (4 of 67 coefs nonzero),0.0140113204813812,4,,,
+district_226,1,lasso,B,lambda=0.007306 (22 of 75 coefs nonzero),0.00730551411157415,22,,,
+district_226,1,forest,A,"mtry=1, min.node.size=40",,,1,40,
+district_226,1,forest,B,"mtry=10, min.node.size=15",,,10,15,
+district_226,2,baseline,-,none,,,,,
+district_226,2,incumbency,-,none,,,,,
+district_226,2,logistic,A,none,,,,,0
+district_226,2,logistic,B,none,,,,,1
+district_226,2,lasso,A,lambda=0.01373 (4 of 65 coefs nonzero),0.0137338412461679,4,,,
+district_226,2,lasso,B,lambda=0.006525 (22 of 73 coefs nonzero),0.00652468725570009,22,,,
+district_226,2,forest,A,"mtry=1, min.node.size=15",,,1,15,
+district_226,2,forest,B,"mtry=4, min.node.size=15",,,4,15,
+district_226,3,baseline,-,none,,,,,
+district_226,3,incumbency,-,none,,,,,
+district_226,3,logistic,A,none,,,,,0
+district_226,3,logistic,B,none,,,,,1
+district_226,3,lasso,A,lambda=0.01309 (4 of 66 coefs nonzero),0.0130926256659224,4,,,
+district_226,3,lasso,B,lambda=0.005667 (25 of 74 coefs nonzero),0.00566748510503593,25,,,
+district_226,3,forest,A,"mtry=2, min.node.size=40",,,2,40,
+district_226,3,forest,B,"mtry=7, min.node.size=5",,,7,5,
+district_226,4,baseline,-,none,,,,,
+district_226,4,incumbency,-,none,,,,,
+district_226,4,logistic,A,none,,,,,1
+district_226,4,logistic,B,none,,,,,1
+district_226,4,lasso,A,lambda=0.01168 (5 of 66 coefs nonzero),0.0116826117766412,5,,,
+district_226,4,lasso,B,lambda=0.006091 (23 of 74 coefs nonzero),0.00609132346288898,23,,,
+district_226,4,forest,A,"mtry=2, min.node.size=40",,,2,40,
+district_226,4,forest,B,"mtry=7, min.node.size=5",,,7,5,
+district_226,5,baseline,-,none,,,,,
+district_226,5,incumbency,-,none,,,,,
+district_226,5,logistic,A,none,,,,,0
+district_226,5,logistic,B,none,,,,,1
+district_226,5,lasso,A,lambda=0.01288 (4 of 66 coefs nonzero),0.0128799559606041,4,,,
+district_226,5,lasso,B,lambda=0.006716 (20 of 74 coefs nonzero),0.00671561971276606,20,,,
+district_226,5,forest,A,"mtry=2, min.node.size=40",,,2,40,
+district_226,5,forest,B,"mtry=4, min.node.size=15",,,4,15,
+district_226,6,baseline,-,none,,,,,
+district_226,6,incumbency,-,none,,,,,
+district_226,6,logistic,A,none,,,,,0
+district_226,6,logistic,B,none,,,,,1
+district_226,6,lasso,A,lambda=0.01173 (7 of 66 coefs nonzero),0.0117255737046458,7,,,
+district_226,6,lasso,B,lambda=0.006114 (25 of 74 coefs nonzero),0.00611372384775746,25,,,
+district_226,6,forest,A,"mtry=1, min.node.size=15",,,1,15,
+district_226,6,forest,B,"mtry=7, min.node.size=5",,,7,5,
+district_226,7,baseline,-,none,,,,,
+district_226,7,incumbency,-,none,,,,,
+district_226,7,logistic,A,none,,,,,0
+district_226,7,logistic,B,none,,,,,1
+district_226,7,lasso,A,lambda=0.01297 (5 of 65 coefs nonzero),0.0129747806673698,5,,,
+district_226,7,lasso,B,lambda=0.006765 (18 of 73 coefs nonzero),0.00676506139346442,18,,,
+district_226,7,forest,A,"mtry=2, min.node.size=40",,,2,40,
+district_226,7,forest,B,"mtry=2, min.node.size=5",,,2,5,
+district_226,8,baseline,-,none,,,,,
+district_226,8,incumbency,-,none,,,,,
+district_226,8,logistic,A,none,,,,,0
+district_226,8,logistic,B,none,,,,,1
+district_226,8,lasso,A,lambda=0.01087 (5 of 64 coefs nonzero),0.0108702302878199,5,,,
+district_226,8,lasso,B,lambda=0.005668 (22 of 72 coefs nonzero),0.00566774708131581,22,,,
+district_226,8,forest,A,"mtry=2, min.node.size=40",,,2,40,
+district_226,8,forest,B,"mtry=4, min.node.size=5",,,4,5,
+district_226,9,baseline,-,none,,,,,
+district_226,9,incumbency,-,none,,,,,
+district_226,9,logistic,A,none,,,,,0
+district_226,9,logistic,B,none,,,,,1
+district_226,9,lasso,A,lambda=0.01259 (5 of 66 coefs nonzero),0.0125916347900157,5,,,
+district_226,9,lasso,B,lambda=0.006565 (21 of 74 coefs nonzero),0.00656528881546071,21,,,
+district_226,9,forest,A,"mtry=1, min.node.size=5",,,1,5,
+district_226,9,forest,B,"mtry=4, min.node.size=15",,,4,15,
+district_226,10,baseline,-,none,,,,,
+district_226,10,incumbency,-,none,,,,,
+district_226,10,logistic,A,none,,,,,0
+district_226,10,logistic,B,none,,,,,1
+district_226,10,lasso,A,lambda=0.01192 (5 of 66 coefs nonzero),0.011922989071333,5,,,
+district_226,10,lasso,B,lambda=0.006217 (23 of 74 coefs nonzero),0.00621665638356599,23,,,
+district_226,10,forest,A,"mtry=2, min.node.size=40",,,2,40,
+district_226,10,forest,B,"mtry=4, min.node.size=5",,,4,5,

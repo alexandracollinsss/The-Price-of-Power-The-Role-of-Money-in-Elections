@@ -1,3 +1,4 @@
 # Contain holdout candidates: never commit these.
 data/do_not_read/
 data/holdout/
+.Rproj.user

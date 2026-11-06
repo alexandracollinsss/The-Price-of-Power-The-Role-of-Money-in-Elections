@@ -674,7 +674,7 @@ cand153061,holdout
 cand153065,dev
 cand153067,dev
 cand153089,holdout
-cand153090,dev
+cand153090,removed_outcome_error
 cand153091,holdout
 cand153096,dev
 cand153097,dev
@@ -731,7 +731,7 @@ cand153594,dev
 cand153597,dev
 cand153600,dev
 cand153604,dev
-cand153606,dev
+cand153606,removed_outcome_error
 cand153610,holdout
 cand153615,dev
 cand153621,holdout
@@ -804,7 +804,7 @@ cand155876,dev
 cand155879,dev
 cand155881,holdout
 cand155882,dev
-cand155886,dev
+cand155886,removed_outcome_error
 cand155887,dev
 cand155889,dev
 cand155890,dev
@@ -1762,7 +1762,7 @@ cand212480,dev
 cand212481,holdout
 cand212484,dev
 cand212485,dev
-cand212491,dev
+cand212491,removed_outcome_error
 cand212497,holdout
 cand212498,dev
 cand212499,dev

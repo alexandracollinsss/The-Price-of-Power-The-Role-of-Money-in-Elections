@@ -34,7 +34,17 @@ removed_ids <- setdiff(all_dev_ids, dev$bonica.rid)
 setorder(dev, bonica.rid)
 cat("Possible duplicates removed from development:", n_dev_before - nrow(dev), "\n")
 
-stopifnot(nrow(dev) + nrow(holdout) + length(removed_ids) == nrow(h),
+# Records DIME marks as general-election winners although someone else won the seat; they
+# appear to be record-linkage errors. Found during modeling, so removed from development only.
+LABEL_ERROR_IDS <- c("cand153090",  # Luke Letlow, LA05 (winner: Julia Letlow)
+                     "cand155886",  # Karen Carter Peterson, LA02 (winner: Troy Carter)
+                     "cand153606",  # Lee Griffin, PA12 (winner: Summer Lee)
+                     "cand212491")  # Lindsey Williams, NY13 (winner: Adriano Espaillat)
+stopifnot(all(LABEL_ERROR_IDS %in% dev$bonica.rid))
+dev <- dev[!bonica.rid %in% LABEL_ERROR_IDS]
+cat("Outcome errors removed from development:", length(LABEL_ERROR_IDS), "\n")
+
+stopifnot(nrow(dev) + nrow(holdout) + length(removed_ids) + length(LABEL_ERROR_IDS) == nrow(h),
           length(intersect(dev$bonica.rid, holdout$bonica.rid)) == 0,
           !any(name_key(dev) %in% name_key(holdout)))
 
@@ -50,8 +60,9 @@ fwrite(holdout, "data/holdout/house2022_holdout.csv")
 # Save the split itself, plus a checksum to show in Part 2 that the holdout is unchanged.
 fwrite(data.table(bonica.rid = h$bonica.rid,
                   split = ifelse(seq_len(nrow(h)) %in% holdout_rows, "holdout",
-                                ifelse(h$bonica.rid %in% removed_ids,
-                                       "removed_duplicate", "dev"))),
+                                ifelse(h$bonica.rid %in% removed_ids, "removed_duplicate",
+                                       ifelse(h$bonica.rid %in% LABEL_ERROR_IDS,
+                                              "removed_outcome_error", "dev")))),
        "data/split/split_assignments.csv")
 checksum <- unname(tools::md5sum("data/holdout/house2022_holdout.csv"))
 writeLines(checksum, "data/split/holdout_md5.txt")

@@ -1,15 +1,16 @@
 # MS&E 226 Project Part 1: Predicting 2022 U.S. House Winners
 
-## Do not read these files
+## The holdout is not in this repository
 
-**Do not open, explore, or share these files, and do not give them to AI tools or agents:**
+The holdout, the original DIME download, and the cleaned file from before the split all contain holdout
+candidates. They are kept outside this repository and outside every folder an AI tool works in.
+**Do not open, explore, or share them, and do not give them to AI tools or agents.**
 
-- `data/do_not_read/dime_og.csv.gz`: the original DIME download, which includes the holdout candidates
-- `data/do_not_read/house2022_clean.csv`: the cleaned file from before the split, which also includes them
-- `data/holdout/house2022_holdout.csv`: the holdout, kept untouched until Part 2
-
-Only the scripts below should read the first two files, to rebuild the split.
 **Use `data/dime_transformed.csv` for all Part 1 exploration, preprocessing, and modeling.**
+
+In Part 2, one team member runs the saved pipeline on the holdout once, with no AI tool open in that
+folder, after checking that the holdout's MD5 checksum matches `data/split/holdout_md5.txt`. Only summary
+metrics are shared.
 
 ## Files
 
@@ -33,7 +34,8 @@ Download the Recipients/Candidates 1979-2024 file (`dime_recipients_1979_2024.cs
 
 ## Reproducing the results
 
-Run these from the project folder, in order:
+Rebuilding the data recreates the holdout in `data/holdout/`, so only do it if necessary, and move the
+holdout and `data/do_not_read/` back out of the project afterward. Run these from the project folder, in order:
 
 ```bash
 Rscript code/01_clean.R

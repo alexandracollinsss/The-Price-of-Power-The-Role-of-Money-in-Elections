@@ -18,8 +18,8 @@ Only the scripts below should read the first two files, to rebuild the split.
 | `code/01_clean.R` | Filters to 2022 House candidates, removes inactive filings and duplicates, and creates the `won` outcome |
 | `code/02_split.R` | Sets aside the 20% holdout and saves the split |
 | `code/03_missing_data.R` | Compares ways of handling missing values (Section 5(e)) |
-| `data/dime_transformed.csv` | Development data: 1,843 candidates |
-| `data/split/split_assignments.csv` | Each candidate ID's assignment: `dev`, `holdout`, or `removed_duplicate` |
+| `data/dime_transformed.csv` | Development data: 1,839 candidates |
+| `data/split/split_assignments.csv` | Each candidate ID's assignment: `dev`, `holdout`, `removed_duplicate`, or `removed_outcome_error` |
 | `data/split/holdout_md5.txt` | Checksum to confirm the holdout is unchanged in Part 2 |
 | `results/results_missing_data.csv` | Results from `03_missing_data.R` |
 

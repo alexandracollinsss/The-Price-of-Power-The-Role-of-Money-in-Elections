@@ -1,0 +1,301 @@
+folds,fold,alg,set,tuning,lambda,nonzero,mtry,min.node.size,cp,minbucket,leaves,glm_warnings
+random_226,1,baseline,-,none,,,,,,,,
+random_226,1,incumbency,-,none,,,,,,,,
+random_226,1,logistic,A,none,,,,,,,,0
+random_226,1,logistic,B,none,,,,,,,,1
+random_226,1,lasso,A,lambda=0.0118 (6 of 66 coefs nonzero),0.0118028756862583,6,,,,,,
+random_226,1,lasso,B,lambda=0.005607 (25 of 74 coefs nonzero),0.00560732217523119,25,,,,,,
+random_226,1,tree,A,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_226,1,tree,B,"cp=0.0005, minbucket=20 (5 leaves)",,,,,5e-04,20,5,
+random_226,1,forest,A,"mtry=1, min.node.size=15",,,1,15,,,,
+random_226,1,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+random_226,2,baseline,-,none,,,,,,,,
+random_226,2,incumbency,-,none,,,,,,,,
+random_226,2,logistic,A,none,,,,,,,,0
+random_226,2,logistic,B,none,,,,,,,,1
+random_226,2,lasso,A,lambda=0.0118 (7 of 67 coefs nonzero),0.0118042522500622,7,,,,,,
+random_226,2,lasso,B,lambda=0.00511 (29 of 75 coefs nonzero),0.00510977900922066,29,,,,,,
+random_226,2,tree,A,"cp=0.02, minbucket=20 (4 leaves)",,,,,0.02,20,4,
+random_226,2,tree,B,"cp=0.02, minbucket=5 (3 leaves)",,,,,0.02,5,3,
+random_226,2,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_226,2,forest,B,"mtry=7, min.node.size=5",,,7,5,,,,
+random_226,3,baseline,-,none,,,,,,,,
+random_226,3,incumbency,-,none,,,,,,,,
+random_226,3,logistic,A,none,,,,,,,,0
+random_226,3,logistic,B,none,,,,,,,,1
+random_226,3,lasso,A,lambda=0.01403 (3 of 66 coefs nonzero),0.0140263182674993,3,,,,,,
+random_226,3,lasso,B,lambda=0.006072 (23 of 74 coefs nonzero),0.0060716583432499,23,,,,,,
+random_226,3,tree,A,"cp=0.05, minbucket=20 (2 leaves)",,,,,0.05,20,2,
+random_226,3,tree,B,"cp=0.005, minbucket=20 (7 leaves)",,,,,0.005,20,7,
+random_226,3,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_226,3,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+random_226,4,baseline,-,none,,,,,,,,
+random_226,4,incumbency,-,none,,,,,,,,
+random_226,4,logistic,A,none,,,,,,,,0
+random_226,4,logistic,B,none,,,,,,,,1
+random_226,4,lasso,A,lambda=0.00964 (10 of 66 coefs nonzero),0.00963976929529533,10,,,,,,
+random_226,4,lasso,B,lambda=0.005026 (28 of 74 coefs nonzero),0.00502618370000747,28,,,,,,
+random_226,4,tree,A,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_226,4,tree,B,"cp=0.0005, minbucket=20 (7 leaves)",,,,,5e-04,20,7,
+random_226,4,forest,A,"mtry=1, min.node.size=15",,,1,15,,,,
+random_226,4,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+random_226,5,baseline,-,none,,,,,,,,
+random_226,5,incumbency,-,none,,,,,,,,
+random_226,5,logistic,A,none,,,,,,,,0
+random_226,5,logistic,B,none,,,,,,,,1
+random_226,5,lasso,A,lambda=0.01286 (3 of 67 coefs nonzero),0.0128559239365286,3,,,,,,
+random_226,5,lasso,B,lambda=0.005565 (24 of 75 coefs nonzero),0.00556502257689939,24,,,,,,
+random_226,5,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+random_226,5,tree,B,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_226,5,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_226,5,forest,B,"mtry=7, min.node.size=15",,,7,15,,,,
+random_226,6,baseline,-,none,,,,,,,,
+random_226,6,incumbency,-,none,,,,,,,,
+random_226,6,logistic,A,none,,,,,,,,1
+random_226,6,logistic,B,none,,,,,,,,1
+random_226,6,lasso,A,lambda=0.01557 (3 of 66 coefs nonzero),0.0155664965437372,3,,,,,,
+random_226,6,lasso,B,lambda=0.005097 (24 of 74 coefs nonzero),0.00509732582262338,24,,,,,,
+random_226,6,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+random_226,6,tree,B,"cp=0.005, minbucket=20 (8 leaves)",,,,,0.005,20,8,
+random_226,6,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_226,6,forest,B,"mtry=7, min.node.size=15",,,7,15,,,,
+random_226,7,baseline,-,none,,,,,,,,
+random_226,7,incumbency,-,none,,,,,,,,
+random_226,7,logistic,A,none,,,,,,,,0
+random_226,7,logistic,B,none,,,,,,,,1
+random_226,7,lasso,A,lambda=0.01416 (3 of 67 coefs nonzero),0.014156835345323,3,,,,,,
+random_226,7,lasso,B,lambda=0.005584 (27 of 75 coefs nonzero),0.00558374757514841,27,,,,,,
+random_226,7,tree,A,"cp=0.02, minbucket=20 (4 leaves)",,,,,0.02,20,4,
+random_226,7,tree,B,"cp=0.0005, minbucket=20 (7 leaves)",,,,,5e-04,20,7,
+random_226,7,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_226,7,forest,B,"mtry=7, min.node.size=15",,,7,15,,,,
+random_226,8,baseline,-,none,,,,,,,,
+random_226,8,incumbency,-,none,,,,,,,,
+random_226,8,logistic,A,none,,,,,,,,0
+random_226,8,logistic,B,none,,,,,,,,1
+random_226,8,lasso,A,lambda=0.01427 (3 of 67 coefs nonzero),0.0142671625791029,3,,,,,,
+random_226,8,lasso,B,lambda=0.005627 (25 of 75 coefs nonzero),0.005627262909548,25,,,,,,
+random_226,8,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+random_226,8,tree,B,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_226,8,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_226,8,forest,B,"mtry=7, min.node.size=15",,,7,15,,,,
+random_226,9,baseline,-,none,,,,,,,,
+random_226,9,incumbency,-,none,,,,,,,,
+random_226,9,logistic,A,none,,,,,,,,0
+random_226,9,logistic,B,none,,,,,,,,1
+random_226,9,lasso,A,lambda=0.01298 (5 of 67 coefs nonzero),0.01297631890511,5,,,,,,
+random_226,9,lasso,B,lambda=0.006165 (24 of 75 coefs nonzero),0.00616480277210834,24,,,,,,
+random_226,9,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+random_226,9,tree,B,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_226,9,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_226,9,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+random_226,10,baseline,-,none,,,,,,,,
+random_226,10,incumbency,-,none,,,,,,,,
+random_226,10,logistic,A,none,,,,,,,,0
+random_226,10,logistic,B,none,,,,,,,,1
+random_226,10,lasso,A,lambda=0.01202 (6 of 67 coefs nonzero),0.0120224202924511,6,,,,,,
+random_226,10,lasso,B,lambda=0.004321 (31 of 75 coefs nonzero),0.0043206338319013,31,,,,,,
+random_226,10,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+random_226,10,tree,B,"cp=0.0005, minbucket=20 (8 leaves)",,,,,5e-04,20,8,
+random_226,10,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_226,10,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+random_227,1,baseline,-,none,,,,,,,,
+random_227,1,incumbency,-,none,,,,,,,,
+random_227,1,logistic,A,none,,,,,,,,0
+random_227,1,logistic,B,none,,,,,,,,1
+random_227,1,lasso,A,lambda=0.01294 (6 of 66 coefs nonzero),0.0129383315106138,6,,,,,,
+random_227,1,lasso,B,lambda=0.00465 (31 of 74 coefs nonzero),0.0046497952569678,31,,,,,,
+random_227,1,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+random_227,1,tree,B,"cp=0.0005, minbucket=20 (7 leaves)",,,,,5e-04,20,7,
+random_227,1,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,1,forest,B,"mtry=7, min.node.size=5",,,7,5,,,,
+random_227,2,baseline,-,none,,,,,,,,
+random_227,2,incumbency,-,none,,,,,,,,
+random_227,2,logistic,A,none,,,,,,,,0
+random_227,2,logistic,B,none,,,,,,,,1
+random_227,2,lasso,A,lambda=0.01393 (4 of 67 coefs nonzero),0.0139290545552663,4,,,,,,
+random_227,2,lasso,B,lambda=0.005494 (25 of 75 coefs nonzero),0.00549390613791189,25,,,,,,
+random_227,2,tree,A,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_227,2,tree,B,"cp=0.005, minbucket=20 (7 leaves)",,,,,0.005,20,7,
+random_227,2,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,2,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+random_227,3,baseline,-,none,,,,,,,,
+random_227,3,incumbency,-,none,,,,,,,,
+random_227,3,logistic,A,none,,,,,,,,0
+random_227,3,logistic,B,none,,,,,,,,1
+random_227,3,lasso,A,lambda=0.0143 (4 of 66 coefs nonzero),0.0143046663047405,4,,,,,,
+random_227,3,lasso,B,lambda=0.004684 (27 of 74 coefs nonzero),0.00468413330734333,27,,,,,,
+random_227,3,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+random_227,3,tree,B,"cp=0.005, minbucket=20 (5 leaves)",,,,,0.005,20,5,
+random_227,3,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,3,forest,B,"mtry=7, min.node.size=5",,,7,5,,,,
+random_227,4,baseline,-,none,,,,,,,,
+random_227,4,incumbency,-,none,,,,,,,,
+random_227,4,logistic,A,none,,,,,,,,1
+random_227,4,logistic,B,none,,,,,,,,1
+random_227,4,lasso,A,lambda=0.01421 (4 of 67 coefs nonzero),0.0142121667639307,4,,,,,,
+random_227,4,lasso,B,lambda=0.005108 (29 of 75 coefs nonzero),0.00510758791084841,29,,,,,,
+random_227,4,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+random_227,4,tree,B,"cp=0.01, minbucket=20 (4 leaves)",,,,,0.01,20,4,
+random_227,4,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,4,forest,B,"mtry=7, min.node.size=5",,,7,5,,,,
+random_227,5,baseline,-,none,,,,,,,,
+random_227,5,incumbency,-,none,,,,,,,,
+random_227,5,logistic,A,none,,,,,,,,0
+random_227,5,logistic,B,none,,,,,,,,1
+random_227,5,lasso,A,lambda=0.01312 (4 of 67 coefs nonzero),0.0131192747466377,4,,,,,,
+random_227,5,lasso,B,lambda=0.005175 (27 of 75 coefs nonzero),0.0051745122951116,27,,,,,,
+random_227,5,tree,A,"cp=0.02, minbucket=20 (4 leaves)",,,,,0.02,20,4,
+random_227,5,tree,B,"cp=0.01, minbucket=20 (5 leaves)",,,,,0.01,20,5,
+random_227,5,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,5,forest,B,"mtry=10, min.node.size=5",,,10,5,,,,
+random_227,6,baseline,-,none,,,,,,,,
+random_227,6,incumbency,-,none,,,,,,,,
+random_227,6,logistic,A,none,,,,,,,,0
+random_227,6,logistic,B,none,,,,,,,,1
+random_227,6,lasso,A,lambda=0.01317 (3 of 67 coefs nonzero),0.0131697152139242,3,,,,,,
+random_227,6,lasso,B,lambda=0.005701 (22 of 75 coefs nonzero),0.00570085533009254,22,,,,,,
+random_227,6,tree,A,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_227,6,tree,B,"cp=0.005, minbucket=20 (7 leaves)",,,,,0.005,20,7,
+random_227,6,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,6,forest,B,"mtry=10, min.node.size=5",,,10,5,,,,
+random_227,7,baseline,-,none,,,,,,,,
+random_227,7,incumbency,-,none,,,,,,,,
+random_227,7,logistic,A,none,,,,,,,,0
+random_227,7,logistic,B,none,,,,,,,,1
+random_227,7,lasso,A,lambda=0.01415 (3 of 67 coefs nonzero),0.014146158814673,3,,,,,,
+random_227,7,lasso,B,lambda=0.006124 (22 of 75 coefs nonzero),0.00612353445530083,22,,,,,,
+random_227,7,tree,A,"cp=0.02, minbucket=20 (4 leaves)",,,,,0.02,20,4,
+random_227,7,tree,B,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_227,7,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,7,forest,B,"mtry=7, min.node.size=5",,,7,5,,,,
+random_227,8,baseline,-,none,,,,,,,,
+random_227,8,incumbency,-,none,,,,,,,,
+random_227,8,logistic,A,none,,,,,,,,0
+random_227,8,logistic,B,none,,,,,,,,1
+random_227,8,lasso,A,lambda=0.01305 (3 of 67 coefs nonzero),0.0130464699423674,3,,,,,,
+random_227,8,lasso,B,lambda=0.005648 (26 of 75 coefs nonzero),0.00564750539413338,26,,,,,,
+random_227,8,tree,A,"cp=0.02, minbucket=20 (4 leaves)",,,,,0.02,20,4,
+random_227,8,tree,B,"cp=0.01, minbucket=20 (5 leaves)",,,,,0.01,20,5,
+random_227,8,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,8,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+random_227,9,baseline,-,none,,,,,,,,
+random_227,9,incumbency,-,none,,,,,,,,
+random_227,9,logistic,A,none,,,,,,,,0
+random_227,9,logistic,B,none,,,,,,,,1
+random_227,9,lasso,A,lambda=0.01411 (3 of 66 coefs nonzero),0.0141068863702344,3,,,,,,
+random_227,9,lasso,B,lambda=0.005564 (26 of 74 coefs nonzero),0.00556404667012771,26,,,,,,
+random_227,9,tree,A,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+random_227,9,tree,B,"cp=0.0005, minbucket=20 (7 leaves)",,,,,5e-04,20,7,
+random_227,9,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,9,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+random_227,10,baseline,-,none,,,,,,,,
+random_227,10,incumbency,-,none,,,,,,,,
+random_227,10,logistic,A,none,,,,,,,,0
+random_227,10,logistic,B,none,,,,,,,,1
+random_227,10,lasso,A,lambda=0.01517 (3 of 67 coefs nonzero),0.015170763299178,3,,,,,,
+random_227,10,lasso,B,lambda=0.005984 (24 of 75 coefs nonzero),0.00598366165309124,24,,,,,,
+random_227,10,tree,A,"cp=0.05, minbucket=5 (3 leaves)",,,,,0.05,5,3,
+random_227,10,tree,B,"cp=0.0005, minbucket=20 (8 leaves)",,,,,5e-04,20,8,
+random_227,10,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+random_227,10,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+district_226,1,baseline,-,none,,,,,,,,
+district_226,1,incumbency,-,none,,,,,,,,
+district_226,1,logistic,A,none,,,,,,,,0
+district_226,1,logistic,B,none,,,,,,,,1
+district_226,1,lasso,A,lambda=0.01408 (3 of 67 coefs nonzero),0.0140847760954703,3,,,,,,
+district_226,1,lasso,B,lambda=0.006097 (24 of 75 coefs nonzero),0.0060969633414796,24,,,,,,
+district_226,1,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+district_226,1,tree,B,"cp=0.005, minbucket=20 (7 leaves)",,,,,0.005,20,7,
+district_226,1,forest,A,"mtry=1, min.node.size=5",,,1,5,,,,
+district_226,1,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+district_226,2,baseline,-,none,,,,,,,,
+district_226,2,incumbency,-,none,,,,,,,,
+district_226,2,logistic,A,none,,,,,,,,0
+district_226,2,logistic,B,none,,,,,,,,1
+district_226,2,lasso,A,lambda=0.01379 (3 of 65 coefs nonzero),0.0137875670604883,3,,,,,,
+district_226,2,lasso,B,lambda=0.004114 (29 of 73 coefs nonzero),0.00411372364102473,29,,,,,,
+district_226,2,tree,A,"cp=0.05, minbucket=20 (2 leaves)",,,,,0.05,20,2,
+district_226,2,tree,B,"cp=0.02, minbucket=5 (3 leaves)",,,,,0.02,5,3,
+district_226,2,forest,A,"mtry=1, min.node.size=15",,,1,15,,,,
+district_226,2,forest,B,"mtry=4, min.node.size=15",,,4,15,,,,
+district_226,3,baseline,-,none,,,,,,,,
+district_226,3,incumbency,-,none,,,,,,,,
+district_226,3,logistic,A,none,,,,,,,,0
+district_226,3,logistic,B,none,,,,,,,,1
+district_226,3,lasso,A,lambda=0.01441 (3 of 66 coefs nonzero),0.0144065442526613,3,,,,,,
+district_226,3,lasso,B,lambda=0.005682 (26 of 74 coefs nonzero),0.00568223791369034,26,,,,,,
+district_226,3,tree,A,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+district_226,3,tree,B,"cp=0.02, minbucket=5 (3 leaves)",,,,,0.02,5,3,
+district_226,3,forest,A,"mtry=1, min.node.size=15",,,1,15,,,,
+district_226,3,forest,B,"mtry=7, min.node.size=15",,,7,15,,,,
+district_226,4,baseline,-,none,,,,,,,,
+district_226,4,incumbency,-,none,,,,,,,,
+district_226,4,logistic,A,none,,,,,,,,1
+district_226,4,logistic,B,none,,,,,,,,1
+district_226,4,lasso,A,lambda=0.01289 (4 of 66 coefs nonzero),0.0128890021521037,4,,,,,,
+district_226,4,lasso,B,lambda=0.005579 (24 of 74 coefs nonzero),0.00557934134678229,24,,,,,,
+district_226,4,tree,A,"cp=0.05, minbucket=5 (3 leaves)",,,,,0.05,5,3,
+district_226,4,tree,B,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+district_226,4,forest,A,"mtry=1, min.node.size=15",,,1,15,,,,
+district_226,4,forest,B,"mtry=4, min.node.size=15",,,4,15,,,,
+district_226,5,baseline,-,none,,,,,,,,
+district_226,5,incumbency,-,none,,,,,,,,
+district_226,5,logistic,A,none,,,,,,,,0
+district_226,5,logistic,B,none,,,,,,,,1
+district_226,5,lasso,A,lambda=0.01293 (3 of 66 coefs nonzero),0.0129288622816931,3,,,,,,
+district_226,5,lasso,B,lambda=0.005597 (24 of 74 coefs nonzero),0.00559659584534482,24,,,,,,
+district_226,5,tree,A,"cp=0.02, minbucket=20 (4 leaves)",,,,,0.02,20,4,
+district_226,5,tree,B,"cp=0.0005, minbucket=20 (7 leaves)",,,,,5e-04,20,7,
+district_226,5,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+district_226,5,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+district_226,6,baseline,-,none,,,,,,,,
+district_226,6,incumbency,-,none,,,,,,,,
+district_226,6,logistic,A,none,,,,,,,,0
+district_226,6,logistic,B,none,,,,,,,,1
+district_226,6,lasso,A,lambda=0.01294 (5 of 66 coefs nonzero),0.0129359571442993,5,,,,,,
+district_226,6,lasso,B,lambda=0.004649 (29 of 74 coefs nonzero),0.00464894195395741,29,,,,,,
+district_226,6,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+district_226,6,tree,B,"cp=0.0005, minbucket=20 (8 leaves)",,,,,5e-04,20,8,
+district_226,6,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+district_226,6,forest,B,"mtry=10, min.node.size=5",,,10,5,,,,
+district_226,7,baseline,-,none,,,,,,,,
+district_226,7,incumbency,-,none,,,,,,,,
+district_226,7,logistic,A,none,,,,,,,,0
+district_226,7,logistic,B,none,,,,,,,,1
+district_226,7,lasso,A,lambda=0.01431 (3 of 65 coefs nonzero),0.0143148643777831,3,,,,,,
+district_226,7,lasso,B,lambda=0.005646 (23 of 73 coefs nonzero),0.00564607748188804,23,,,,,,
+district_226,7,tree,A,"cp=0.05, minbucket=5 (3 leaves)",,,,,0.05,5,3,
+district_226,7,tree,B,"cp=0.02, minbucket=20 (3 leaves)",,,,,0.02,20,3,
+district_226,7,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+district_226,7,forest,B,"mtry=7, min.node.size=5",,,7,5,,,,
+district_226,8,baseline,-,none,,,,,,,,
+district_226,8,incumbency,-,none,,,,,,,,
+district_226,8,logistic,A,none,,,,,,,,0
+district_226,8,logistic,B,none,,,,,,,,1
+district_226,8,lasso,A,lambda=0.01199 (3 of 64 coefs nonzero),0.011991127355623,3,,,,,,
+district_226,8,lasso,B,lambda=0.005191 (23 of 72 coefs nonzero),0.00519067278135568,23,,,,,,
+district_226,8,tree,A,"cp=0.02, minbucket=20 (4 leaves)",,,,,0.02,20,4,
+district_226,8,tree,B,"cp=0.005, minbucket=20 (7 leaves)",,,,,0.005,20,7,
+district_226,8,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+district_226,8,forest,B,"mtry=4, min.node.size=5",,,4,5,,,,
+district_226,9,baseline,-,none,,,,,,,,
+district_226,9,incumbency,-,none,,,,,,,,
+district_226,9,logistic,A,none,,,,,,,,0
+district_226,9,logistic,B,none,,,,,,,,1
+district_226,9,lasso,A,lambda=0.01389 (3 of 66 coefs nonzero),0.0138898245894191,3,,,,,,
+district_226,9,lasso,B,lambda=0.005478 (26 of 74 coefs nonzero),0.00547843303101128,26,,,,,,
+district_226,9,tree,A,"cp=0.05, minbucket=5 (2 leaves)",,,,,0.05,5,2,
+district_226,9,tree,B,"cp=0.0005, minbucket=20 (8 leaves)",,,,,5e-04,20,8,
+district_226,9,forest,A,"mtry=1, min.node.size=15",,,1,15,,,,
+district_226,9,forest,B,"mtry=4, min.node.size=15",,,4,15,,,,
+district_226,10,baseline,-,none,,,,,,,,
+district_226,10,incumbency,-,none,,,,,,,,
+district_226,10,logistic,A,none,,,,,,,,0
+district_226,10,logistic,B,none,,,,,,,,1
+district_226,10,lasso,A,lambda=0.01092 (5 of 66 coefs nonzero),0.010919631629049,5,,,,,,
+district_226,10,lasso,B,lambda=0.005694 (23 of 74 coefs nonzero),0.00569350498157648,23,,,,,,
+district_226,10,tree,A,"cp=0.02, minbucket=5 (3 leaves)",,,,,0.02,5,3,
+district_226,10,tree,B,"cp=0.01, minbucket=20 (5 leaves)",,,,,0.01,20,5,
+district_226,10,forest,A,"mtry=2, min.node.size=40",,,2,40,,,,
+district_226,10,forest,B,"mtry=7, min.node.size=5",,,7,5,,,,

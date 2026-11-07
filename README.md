@@ -16,13 +16,20 @@ metrics are shared.
 
 | Path | What it is |
 |---|---|
-| `code/01_clean.R` | Filters to 2022 House candidates, removes inactive filings and duplicates, and creates the `won` outcome |
-| `code/02_split.R` | Sets aside the 20% holdout and saves the split |
+| `code/01_clean.R` | Filters to 2022 House candidates, removes inactive filings and duplicates, and creates the `won` outcome (Section 3) |
+| `code/02_split.R` | Sets aside the 20% holdout and saves the split (Section 4) |
 | `code/03_missing_data.R` | Compares ways of handling missing values (Section 5(e)) |
+| `code/05_exploration` | Exploratory analysis of which predictors are associated with winning (Section 5) |
+| `code/pipeline_functions.R` | Feature building, preprocessing, and model fitting used by `04_prediction.R` |
+| `code/04_prediction.R` | Trains, tunes, and compares the prediction models with cross-validation, and saves the final pipeline (Section 6) |
+| `code/06_prediction_figures.R` | Makes Figure 6.1 from the saved Section 6 results |
 | `data/dime_transformed.csv` | Development data: 1,839 candidates |
 | `data/split/split_assignments.csv` | Each candidate ID's assignment: `dev`, `holdout`, `removed_duplicate`, or `removed_outcome_error` |
 | `data/split/holdout_md5.txt` | Checksum to confirm the holdout is unchanged in Part 2 |
 | `results/results_missing_data.csv` | Results from `03_missing_data.R` |
+| `results/*_prediction*`, `results/fig_*` | Results and figures from `04_prediction.R` and `06_prediction_figures.R` |
+| `results/final_pipeline.rds` | Saved final pipeline, to be run once on the holdout in Part 2 |
+| `results/full_cycle_benchmark_pipeline.rds` | Saved benchmark pipeline that uses full-cycle fundraising (retrospective only) |
 
 ## Getting the data
 
@@ -34,15 +41,23 @@ Download the Recipients/Candidates 1979-2024 file (`dime_recipients_1979_2024.cs
 
 ## Reproducing the results
 
-Rebuilding the data recreates the holdout in `data/holdout/`, so only do it if necessary, and move the
-holdout and `data/do_not_read/` back out of the project afterward. Run these from the project folder, in order:
+The development data and saved split are already in the repository, so reproducing the analysis only
+needs these scripts. Run them from the project folder, in this order:
 
 ```bash
-Rscript code/01_clean.R
-Rscript code/02_split.R
 Rscript code/03_missing_data.R
+Rscript code/05_exploration
+Rscript code/04_prediction.R
+Rscript code/06_prediction_figures.R
 ```
 
+`05_exploration` writes its figures and tables to the project folder; the other scripts write to `results/`.
+
+`01_clean.R` and `02_split.R` rebuild the development data from the original DIME file. They
+also recreate the holdout in `data/holdout/`, so only run them if necessary, and move the holdout and
+`data/do_not_read/` back out of the project afterward.
+
 - Holdout split seed: 226
-- Cross-validation: 10 folds, with fold seeds 226 and 227
-- Software: R 4.5.2, data.table 1.18.0, rpart 4.1.24
+- Cross-validation: 10 folds, with fold seed 226 for model selection and 227 as a robustness check
+- Software: R 4.5.2 (data preparation and missing-data comparison) and R 4.4.3 (prediction);
+  data.table 1.18, rpart 4.1, glmnet 4.1-10, ranger 0.18.0. `05_exploration` uses base R only.

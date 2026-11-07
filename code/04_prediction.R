@@ -5,6 +5,7 @@
 #   - Outcome: won (1 = won the 2022 general election).
 #   - Primary metric: log loss on all candidates; secondary: AUC, both also on non-incumbents,
 #     and a confusion matrix at threshold 1/3 (missing a winner costs 2x backing a loser).
+#   - Algorithms: logistic regression, lasso logistic regression, decision tree, random forest.
 #   - 10-fold CV with the same folds as 03_missing_data.R (fold seed 226). Selection uses these.
 #   - All preprocessing (medians, category levels) and all tuning happen inside the training
 #     portion of each fold; the validation fold is used only to score predictions.
@@ -20,7 +21,7 @@ source("code/pipeline_functions.R")
 
 K <- 10
 SELECTION <- "random_226"
-ALGS <- c("logistic", "lasso", "forest")
+ALGS <- c("logistic", "lasso", "tree", "forest")
 TOP_K <- 50   # stakeholder view: winners among the 50 highest-ranked non-incumbents
 CAL_BINS <- c(0, 0.05, 0.10, 0.20, 1/3, 0.50, 0.75, 1)
 
@@ -67,6 +68,9 @@ for (scheme in names(FOLD_SCHEMES)) {
         nonzero = if (is.null(fit$nonzero)) NA_integer_ else fit$nonzero,
         mtry = if (is.null(fit$mtry)) NA_integer_ else fit$mtry,
         min.node.size = if (is.null(fit$min.node.size)) NA_integer_ else fit$min.node.size,
+        cp = if (is.null(fit$cp)) NA_real_ else fit$cp,
+        minbucket = if (is.null(fit$minbucket)) NA_integer_ else fit$minbucket,
+        leaves = if (is.null(fit$leaves)) NA_integer_ else fit$leaves,
         glm_warnings = if (is.null(fit$glm_warnings)) NA_integer_ else fit$glm_warnings)
     }
   }
@@ -121,6 +125,9 @@ tune_summ <- tuning[, .(
   selected = if (alg[1] == "lasso")
       sprintf("lambda %.4g-%.4g (median %.4g); %d-%d nonzero",
               min(lambda), max(lambda), median(lambda), min(nonzero), max(nonzero))
+    else if (alg[1] == "tree")
+      paste0(paste(names(sort(table(paste0("cp=", cp, ",leaf=", minbucket)), decreasing = TRUE)),
+                   collapse = "; "), sprintf(" [%d-%d leaves]", min(leaves), max(leaves)))
     else if (alg[1] == "forest")
       paste(names(sort(table(paste0("mtry=", mtry, ",node=", min.node.size)), decreasing = TRUE)),
             collapse = "; ")
@@ -182,7 +189,7 @@ build_pipeline <- function(row, label) {
        preprocessing = pp, fit = fit, tuning = fit$tuning, threshold = THRESHOLD, cap = P_CAP,
        cv_log_loss = row$log_loss, trained_on = "data/dime_transformed.csv (development rows)",
        r_version = R.version.string,
-       packages = sapply(c("data.table", "glmnet", "ranger"), function(p) as.character(packageVersion(p))),
+       packages = sapply(c("data.table", "glmnet", "ranger", "rpart"), function(p) as.character(packageVersion(p))),
        usage = "source('code/pipeline_functions.R'); p <- predict_pipeline(pipe, raw)")
 }
 final <- build_pipeline(final_row, "FINAL: pre-primary (Set A)")

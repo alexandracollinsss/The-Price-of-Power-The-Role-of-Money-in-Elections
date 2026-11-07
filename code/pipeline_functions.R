@@ -7,6 +7,7 @@
 library(data.table)
 library(glmnet)
 library(ranger)
+library(rpart)
 
 # ---- Fixed definitions (chosen before any Section 6 results were seen) -------------------
 CATS  <- c("party", "ico.status", "cand.gender", "state")
@@ -29,6 +30,9 @@ RF_GRID <- list(
   B = CJ(mtry = c(2, 4, 7, 10), min.node.size = c(5, 15, 40))
 )
 RF_TREES <- 500
+
+# Decision tree tuning grid (12 settings): complexity parameter (pruning) x minimum leaf size.
+TREE_GRID <- CJ(cp = c(0.0005, 0.002, 0.005, 0.01, 0.02, 0.05), minbucket = c(5, 20))
 INNER_K  <- 10      # inner folds for choosing the lasso penalty
 
 # ---- Deterministic feature construction (no fitted quantities) ---------------------------
@@ -118,6 +122,28 @@ fit_algorithm <- function(alg, df, y, pp, set_name, seed) {
     return(list(model = fit, mtry = best$mtry, min.node.size = best$min.node.size,
                 tuning = sprintf("mtry=%d, min.node.size=%d", best$mtry, best$min.node.size)))
   }
+  if (alg == "tree") {
+    dat <- cbind(df, y = factor(y, levels = c(0, 1)))
+    grow <- function(d, g) rpart(y ~ ., data = d, method = "class",
+      control = rpart.control(cp = TREE_GRID$cp[g], minbucket = TREE_GRID$minbucket[g],
+                              minsplit = 2 * TREE_GRID$minbucket[g], xval = 0))
+    set.seed(seed)
+    foldid <- sample(rep(1:INNER_K, length.out = nrow(dat)))
+    inner <- sapply(seq_len(nrow(TREE_GRID)), function(g) {         # inner-CV log loss
+      p <- numeric(nrow(dat))
+      for (j in 1:INNER_K) {
+        f <- grow(dat[foldid != j, ], g)
+        p[foldid == j] <- predict(f, dat[foldid == j, ], type = "prob")[, "1"]
+      }
+      log_loss(y, p)
+    })
+    g <- which.min(inner)
+    fit <- grow(dat, g)
+    leaves <- sum(fit$frame$var == "<leaf>")
+    return(list(model = fit, cp = TREE_GRID$cp[g], minbucket = TREE_GRID$minbucket[g], leaves = leaves,
+                tuning = sprintf("cp=%g, minbucket=%d (%d leaves)", TREE_GRID$cp[g],
+                                 TREE_GRID$minbucket[g], leaves)))
+  }
   stop("unknown algorithm: ", alg)
 }
 
@@ -129,7 +155,8 @@ predict_algorithm <- function(alg, fit, df, pp) {
     logistic   = predict(fit$model, newdata = df, type = "response"),
     lasso      = as.numeric(predict(fit$model, newx = design_matrix(df, pp),
                                     s = "lambda.min", type = "response")),
-    forest     = predict(fit$model, data = df)$predictions[, "1"])
+    forest     = predict(fit$model, data = df)$predictions[, "1"],
+    tree       = predict(fit$model, newdata = df, type = "prob")[, "1"])
   cap(as.numeric(p))
 }
 

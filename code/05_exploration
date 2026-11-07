@@ -1,10 +1,13 @@
-# MS&E 226 Project Part 1, Section 5(b)
-# Which covariates are most / least associated with the outcome?
+# MS&E 226 Project Part 1, Section 5 (exploration)
 # DEVELOPMENT DATA ONLY (never load the holdout here).
 # Base R only, no extra packages needed.
 
-df <- read.csv("dime_transformed.csv", check.names = FALSE,
+df <- read.csv("data/dime_transformed.csv", check.names = FALSE,
                stringsAsFactors = FALSE)
+
+out_dir <- "results"
+dir.create(out_dir, showWarnings = FALSE)   # creates the folder if it's missing
+
 y <- df$won
 
 numeric_vars <- c("district.pres.vs", "recipient.cfscore", "contributor.cfscore",
@@ -71,18 +74,40 @@ print(cat_tbl, digits = 3, row.names = FALSE)
 cat("\nNote: state has many levels, so V is inflated by small cells.\n")
 
 ## ---------- plots ----------
-# 1. Spearman correlation bar chart
-png("fig_corr_with_outcome.png", width = 1200, height = 700, res = 200)
-par(mar = c(4, 12, 3, 1))
-t <- num_tbl[order(num_tbl$spearman), ]
-barplot(t$spearman, names.arg = t$variable, horiz = TRUE, las = 1,
-        xlab = "Spearman correlation with won",
-        main = "Numeric predictors vs. winning")
+# 1. Spearman correlation bar chart (readable labels)
+nice_names <- c(
+  "district.pres.vs"              = "District Democratic presidential vote share",
+  "recipient.cfscore"             = "Candidate ideology (recipient CFscore)",
+  "contributor.cfscore"           = "Donor ideology (contributor CFscore)",
+  "num.givers"                    = "Number of donors",
+  "total.receipts"                = "Total receipts",
+  "total.indiv.contribs"          = "Itemized individual contributions",
+  "total.unitemized"              = "Unitemized individual contributions",
+  "total.pac.contribs"            = "PAC contributions",
+  "total.contribs.from.candidate" = "Candidate self-funding"
+)
+
+t <- num_tbl[order(num_tbl$spearman), ]      # strongest positive ends up on top
+bar_cols <- ifelse(t$spearman >= 0, "steelblue", "firebrick")
+
+png(file.path(out_dir, "fig_corr_with_outcome.png"), width = 1800, height = 900, res = 200)
+par(mar = c(4.5, 16, 3, 2))
+bp <- barplot(t$spearman, names.arg = unname(nice_names[t$variable]),
+              horiz = TRUE, las = 1, col = bar_cols, cex.names = 0.8,
+              xlim = c(-0.4, 0.8),
+              xlab = "Spearman correlation with winning (won = 1)",
+              main = "Association between numeric predictors and winning")
+abline(v = 0)
+text(t$spearman, bp, labels = sprintf("%.2f", t$spearman),
+     pos = ifelse(t$spearman >= 0, 4, 2), cex = 0.75)
+legend("bottomright",
+       legend = c("Higher value, more likely to win", "Higher value, less likely to win"),
+       fill = c("steelblue", "firebrick"), bty = "n", cex = 0.7)
 dev.off()
 
 # 2. boxplots of top 4 numeric predictors by outcome
 top <- head(num_tbl$variable, 4)
-png("fig_top_numeric_boxplots.png", width = 2000, height = 700, res = 200)
+png(file.path(out_dir, "fig_top_numeric_boxplots.png"), width = 2000, height = 700, res = 200)
 par(mfrow = c(1, 4), mar = c(3, 4, 3, 1))
 for (v in top) {
   x <- if (v %in% money_vars) slog(df[[v]]) else df[[v]]
@@ -92,18 +117,37 @@ for (v in top) {
 }
 dev.off()
 
-# 3. win rate by party / incumbency / gender
-png("fig_winrate_categorical.png", width = 1800, height = 600, res = 200)
-par(mfrow = c(1, 3), mar = c(4, 4, 3, 1))
+# 3. win rate by party / incumbency / gender (with readable labels)
+label_maps <- list(
+  party       = c("100" = "Democratic", "200" = "Republican", "328" = "Independent"),
+  ico.status  = c("C" = "Challenger", "I" = "Incumbent", "O" = "Open seat"),
+  cand.gender = c("F" = "Female", "M" = "Male", "U" = "Uncoded")
+)
+axis_titles <- c(party = "Party", ico.status = "Incumbency status",
+                 cand.gender = "Gender")
+
+png(file.path(out_dir, "fig_winrate_categorical.png"), width = 2000, height = 750, res = 200)
+par(mfrow = c(1, 3), mar = c(5, 4, 3, 1))
 for (v in c("party", "ico.status", "cand.gender")) {
-  barplot(tapply(y, df[[v]], mean), ylim = c(0, 1), ylab = "Win rate",
-          main = paste("Win rate by", v))
+  rates <- tapply(y, df[[v]], mean)
+  ns    <- table(df[[v]])[names(rates)]
+  labs  <- label_maps[[v]][names(rates)]
+  
+  bp <- barplot(rates,
+                names.arg = paste0(labs, "\n(n = ", as.vector(ns), ")"),
+                ylim = c(0, 1), ylab = "Win rate", xlab = axis_titles[v],
+                main = paste("Win rate by", tolower(axis_titles[v])),
+                cex.names = 0.8)
+  text(bp, rates, labels = paste0(round(100 * rates, 1), "%"),
+       pos = 3, cex = 0.75)
   abline(h = mean(y), lty = 2, col = "gray40")
+  legend("topright", legend = paste0("Overall win rate (", round(100 * mean(y)), "%)"),
+         lty = 2, col = "gray40", bty = "n", cex = 0.7)
 }
 dev.off()
 
-write.csv(num_tbl, "table_numeric_assoc.csv", row.names = FALSE)
-write.csv(cat_tbl, "table_categorical_assoc.csv", row.names = FALSE)
+write.csv(num_tbl, file.path(out_dir, "table_numeric_assoc.csv"), row.names = FALSE)
+write.csv(cat_tbl, file.path(out_dir, "table_categorical_assoc.csv"), row.names = FALSE)
 
 # for states
 # win rate and count by state
@@ -114,7 +158,7 @@ st   <- data.frame(state = names(rate), rate = as.vector(rate), n = as.vector(n)
 st <- st[st$n >= 15, ]        # drop tiny states (arbitrary cutoff, say so in report)
 st <- st[order(st$rate), ]
 
-png("fig_winrate_state.png", width = 1400, height = 1000, res = 200)
+png(file.path(out_dir, "fig_winrate_state.png"), width = 1400, height = 1000, res = 200)
 par(mar = c(4, 5, 3, 1))
 dotchart(st$rate, labels = paste0(st$state, " (n=", st$n, ")"),
          xlab = "Win rate", main = "Win rate by state (n >= 15)")
@@ -137,17 +181,47 @@ pair_tbl <- data.frame(
 pair_tbl <- pair_tbl[order(-abs(pair_tbl$spearman)), ]
 print(head(pair_tbl, 10), row.names = FALSE)
 
-# heatmap
-png("fig_corr_heatmap.png", width = 1400, height = 1200, res = 200)
-par(mar = c(9, 9, 3, 2))
-k <- ncol(cor_mat)
-image(1:k, 1:k, cor_mat[, k:1], zlim = c(-1, 1),
-      col = hcl.colors(21, "Blue-Red 3"), axes = FALSE, xlab = "", ylab = "",
+# heatmap (readable labels, color scale)
+short_names <- c(
+  "district.pres.vs"              = "District Dem. pres. vote share",
+  "recipient.cfscore"             = "Candidate ideology (CFscore)",
+  "contributor.cfscore"           = "Donor ideology (CFscore)",
+  "num.givers"                    = "Number of donors",
+  "total.receipts"                = "Total receipts",
+  "total.indiv.contribs"          = "Itemized individual $",
+  "total.unitemized"              = "Unitemized individual $",
+  "total.pac.contribs"            = "PAC $",
+  "total.contribs.from.candidate" = "Candidate self-funding"
+)
+cm <- cor_mat
+rownames(cm) <- colnames(cm) <- unname(short_names[colnames(cor_mat)])
+k    <- ncol(cm)
+cols <- hcl.colors(21, "Blue-Red 3")
+
+png(file.path(out_dir, "fig_corr_heatmap.png"), width = 2000, height = 1600, res = 200)
+layout(matrix(1:2, nrow = 1), widths = c(10, 1))
+
+# main heatmap
+par(mar = c(11, 12, 3, 1))
+image(1:k, 1:k, cm[, k:1], zlim = c(-1, 1), col = cols,
+      axes = FALSE, xlab = "", ylab = "",
       main = "Spearman correlations among numeric predictors")
-axis(1, 1:k, colnames(cor_mat), las = 2, cex.axis = 0.7)
-axis(2, 1:k, rev(colnames(cor_mat)), las = 2, cex.axis = 0.7)
-for (i in 1:k) for (j in 1:k)
-  text(i, k - j + 1, round(cor_mat[i, j], 2), cex = 0.6)
+axis(1, 1:k, colnames(cm), las = 2, cex.axis = 0.75)
+axis(2, 1:k, rev(colnames(cm)), las = 2, cex.axis = 0.75)
+box()
+for (i in 1:k) for (j in 1:k) {
+  v <- cm[i, j]
+  text(i, k - j + 1, sprintf("%.2f", v), cex = 0.65,
+       col = ifelse(abs(v) > 0.6, "white", "black"))
+}
+
+# color scale
+par(mar = c(11, 0.5, 3, 4))
+z <- seq(-1, 1, length.out = 21)
+image(1, z, matrix(z, nrow = 1), col = cols, axes = FALSE, xlab = "", ylab = "")
+axis(4, at = c(-1, -0.5, 0, 0.5, 1), las = 1, cex.axis = 0.75)
+mtext("Spearman correlation", side = 4, line = 2.5, cex = 0.8)
+box()
 dev.off()
 
 # numeric predictors by incumbency (medians, since money is skewed)
@@ -159,6 +233,32 @@ aggregate(cbind(total.receipts, total.pac.contribs, num.givers,
 round(prop.table(table(df$`ico.status`, df$party), margin = 2), 2)
 round(prop.table(table(df$cand.gender, df$party), margin = 2), 2)
 round(prop.table(table(df$cand.gender, df$`ico.status`), margin = 2), 2)
+
+# ---------- table: gender by party (counts and column %) ----------
+gp <- table(Gender = df$cand.gender, Party = df$party)
+
+gender_names <- c(F = "Female", M = "Male", U = "Uncoded")
+party_names  <- c("100" = "Democratic", "200" = "Republican", "328" = "Independent")
+
+counts <- addmargins(gp)                       # adds a Total row and column
+pct    <- round(100 * prop.table(gp, margin = 2))   # % of each party
+
+# build "count (pct%)" cells; the Total column and row show counts only
+cells <- matrix("", nrow = nrow(gp) + 1, ncol = ncol(gp) + 1)
+for (i in seq_len(nrow(gp))) {
+  for (j in seq_len(ncol(gp))) {
+    cells[i, j] <- paste0(counts[i, j], " (", pct[i, j], "%)")
+  }
+  cells[i, ncol(gp) + 1] <- as.character(counts[i, ncol(gp) + 1])
+}
+cells[nrow(gp) + 1, ] <- as.character(counts[nrow(gp) + 1, ])
+
+gender_party_tbl <- as.data.frame(cells, stringsAsFactors = FALSE)
+rownames(gender_party_tbl) <- c(gender_names[rownames(gp)], "Total")
+colnames(gender_party_tbl) <- c(party_names[colnames(gp)], "Total")
+
+print(gender_party_tbl)
+write.csv(gender_party_tbl, file.path(out_dir, "table_gender_by_party.csv"))
 
 # Cramer's V between categorical pairs (reuses your cramers_v function)
 cramers_v(df$party, df$`ico.status`)
@@ -183,7 +283,7 @@ summarize_groups <- function(data, group) {
 }
 
 summarize_groups(df, "ico.status")
-summarize_groups(df[df$party %in% c(100, 200, 328), ], "party")   # drop tiny party 328
+summarize_groups(df[df$party %in% c(100, 200, 328), ], "party")
 summarize_groups(df, "cand.gender")
 
 ###
@@ -207,7 +307,7 @@ within_group_cor(df, "cand.gender")
 
 ###
 # money vs. outcome, split by incumbency
-png("fig_subgroup_money.png", width = 1800, height = 600, res = 200)
+png(file.path(out_dir, "fig_subgroup_money.png"), width = 1800, height = 600, res = 200)
 par(mfrow = c(1, 3), mar = c(3, 4, 3, 1))
 for (l in c("C", "I", "O")) {
   sub <- df[df$ico.status == l, ]
@@ -218,7 +318,7 @@ for (l in c("C", "I", "O")) {
 dev.off()
 
 # district.pres.vs vs. winning, by party
-png("fig_subgroup_party.png", width = 1400, height = 600, res = 200)
+png(file.path(out_dir, "fig_subgroup_party.png"), width = 1400, height = 600, res = 200)
 par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
 for (p in c(100, 200)) {
   sub <- df[df$party == p, ]
@@ -226,4 +326,3 @@ for (p in c(100, 200)) {
           ylab = "district.pres.vs", xlab = "", main = paste("party =", p))
 }
 dev.off()
-
